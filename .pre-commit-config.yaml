@@ -20,3 +20,12 @@ repos:
     hooks:
       - id: cfn-python-lint
         files: \.template$
+  - repo: https://github.com/amperser/proselint.git
+    rev: 0.13.0
+    hooks:
+      - id: proselint
+        files: \.md$
+  - repo: https://github.com/hadolint/hadolint.git
+    rev: v2.8.0
+    hooks:
+      - id: hadolint-docker
