@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks.git
-    rev: v4.2.0
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -11,12 +11,12 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.26.3
+    rev: v1.28.0
     hooks:
       - id: yamllint
         exclude: "^.*vault.yml$"
   - repo: https://github.com/awslabs/cfn-python-lint.git
-    rev: v0.59.0
+    rev: v0.72.2
     hooks:
       - id: cfn-python-lint
         files: \.template$
@@ -26,6 +26,6 @@ repos:
       - id: proselint
         files: \.md$
   - repo: https://github.com/hadolint/hadolint.git
-    rev: v2.10.0
+    rev: v2.12.1-beta
     hooks:
       - id: hadolint-docker
