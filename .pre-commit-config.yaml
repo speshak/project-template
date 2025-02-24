@@ -11,21 +11,21 @@ repos:
     hooks:
       - id: shell-lint
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.28.0
+    rev: v1.35.1
     hooks:
       - id: yamllint
         exclude: "^.*vault.yml$"
   - repo: https://github.com/awslabs/cfn-python-lint.git
-    rev: v0.72.2
+    rev: v1.25.1
     hooks:
       - id: cfn-python-lint
         files: \.template$
   - repo: https://github.com/amperser/proselint.git
-    rev: 0.13.0
+    rev: 0.14.0
     hooks:
       - id: proselint
         files: \.md$
   - repo: https://github.com/hadolint/hadolint.git
-    rev: v2.12.1-beta
+    rev: v2.13.1-beta
     hooks:
       - id: hadolint-docker
