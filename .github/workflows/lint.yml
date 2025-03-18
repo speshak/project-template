@@ -2,13 +2,32 @@
 name: Lint
 on: [push, pull_request]
 
+permissions:
+  contents: read
+  actions: read
+
+
 jobs:
   lint:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.9
       - uses: pre-commit/action@v3.0.1
+        env:
+          SKIP: "checkov_container"
+
+  checkov:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkov GitHub Action
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          output_format: cli
+          output_file_path: console

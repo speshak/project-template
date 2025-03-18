@@ -29,3 +29,8 @@ repos:
     rev: v2.13.1-beta
     hooks:
       - id: hadolint-docker
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 3.2.382
+    hooks:
+      - id: checkov_container
+        args: [--quiet]
